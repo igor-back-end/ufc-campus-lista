@@ -1,4 +1,4 @@
-from campus import Campus
+from classes import Campus
 
 lista_geral_campus = []
 

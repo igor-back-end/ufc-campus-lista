@@ -1,4 +1,4 @@
-from curso import Curso
+from .curso import Curso
 
 class Campus:
 
