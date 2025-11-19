@@ -8,6 +8,32 @@ def buscar_campus_por_nome(nome):
             return campus
     return None
 
+def inicializar_dados():
+    print(f"\n{'-'*50} Inicializando dados do sistema {'-'*50}")
+
+    pici = Campus("Campus do Pici", "Fortaleza")
+    benfica = Campus("Campus do Benfica", "Fortaleza")
+    jardins_de_anita = Campus("Campus Jardins de Anita", "Itapajé")
+    
+    lista_geral_campus.extend([pici, benfica, jardins_de_anita])
+    
+    pici.adicionar_curso("Ciência da Computação", "CC01")
+    benfica.adicionar_curso("Direito", "DIR01")
+    
+    jardins_de_anita.adicionar_curso("Análise e Desenvolvimento de Sistemas", "ADS01")
+    jardins_de_anita.adicionar_curso("Ciência de Dados", "CD01")
+    jardins_de_anita.adicionar_curso("Segurança da Informação", "SI01")
+
+    curso_ads01 = jardins_de_anita.buscar_curso_por_codigo("ADS01")
+
+    if curso_ads01:
+        curso_ads01.adicionar_aluno("DALESSANDRO GOMES DAVI", "0001", "DALESSANDRO@ALU.UFC.BR", 2)
+        curso_ads01.adicionar_aluno("FRANCISCO IGOR LIMA MATOS DA SILVA", "0002", "IGOR@ALU.UFC.BR", 2)
+        curso_ads01.adicionar_aluno("KAIRO KALÉO BARRETO MESQUITA", "0003", "KAIRO@ALU.UFC.BR", 2)
+        curso_ads01.adicionar_aluno("WENDEL VICTOR SANTOS COELHO", "0004", "WENDEL@ALU.UFC.BR", 2)
+
+    print(f"\n{'-'*50} Dados carregados com sucesso! {'-'*50}")
+
 def menu_alunos(curso_selecionado):
     while True:
         print(f"\n--- Gerenciando Curso: [{curso_selecionado.nome_curso} (Cod: {curso_selecionado.codigo_curso})] ---")
@@ -187,4 +213,5 @@ def menu_principal():
             print("[Erro]: Opção inválida. Tente novamente!")
 
 if __name__ == "__main__":
+    inicializar_dados()
     menu_principal()

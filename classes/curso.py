@@ -20,14 +20,14 @@ class Curso:
         print(f"\nAluno '{nome}' (Mat: {matricula}) adicionado ao curso '{self.nome_curso}'.")
 
     def listar_alunos(self):
-        print(f"\n--- Lista de Alunos do Curso: {self.nome_curso} (Cod: {self.codigo_curso}) ---")
+        print(f"\n{'-'*50} Lista de Alunos do Curso: {self.nome_curso} (Cod: {self.codigo_curso}) {'-'*50}")
         if not self.lista_de_alunos:
             print("Nenhum aluno cadastrado neste curso.")
             return
 
         for aluno in self.lista_de_alunos:
             print(aluno)
-        print(f"\n--- Total: {len(self.lista_de_alunos)} aluno(s) ---")
+        print(f"\n{'-'*80} Total: {len(self.lista_de_alunos)} aluno(s) {'-'*80}")
 
     def buscar_aluno_por_matricula(self, matricula):
         for aluno in self.lista_de_alunos:
